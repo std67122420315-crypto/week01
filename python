@@ -1,0 +1,56 @@
+from flask import Flask
+import uuid
+
+app = Flask(_name_)
+
+# --- Basic Routes ---
+@app.route('/')
+def index():
+    return '''<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flask Basic</title>
+</head>
+<body>
+<h1>home page</h1>
+</body>
+</html>'''
+
+@app.route('/name')
+def name():
+    return '<h1>siwakorn</h1>'
+
+@app.route('/user/<username>')
+def user(username):
+    return f'<h1>My name is **{username}**</h1>'
+
+# --- Calculator Routes ---
+@app.route('/calculator/addition/<int:a>/<int:b>')
+def addition(a, b):
+    return f'<h1>{a} + {b} = **{a+b}**</h1>'
+
+@app.route('/calculator/subtractiion/<int:a>/<int:b>')
+def subtraction(a, b):
+    return f'<h1>{a} - {b} = **{a-b}**</h1>'
+
+@app.route('/calculator/multiplication/<int:a>/<int:b>')
+def multiply(a, b):
+    return f'<h1>{a} * {b} = **{a*b}**</h1>'
+
+@app.route('/calculator/division/<int:a>/<int:b>')
+def divide(a, b):
+    # Note: Assumes b is not zero for simplicity in this code block
+    return f'<h1>{a} / {b} = **{a/b}**</h1>'
+
+# --- Secret Route ---
+@app.route('/secret/coolsks')
+def my_secret():
+    # SK stands for Secret Key
+    return f'<h1>My Secret Key: **(sk)**</h1>'
+
+if _name_ == '_main_':
+    # WARNING: Do not use this in a production deployment. Use a production WSGI server instead.
+    # The command line output in the image shows it is running on http://127.0.0.1:5000
+    app.run(debug=True)
