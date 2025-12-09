@@ -1,0 +1,12 @@
+1 blinker ==1.9.0  
+2 click ==8.1.8  
+3 colorama ==0.4.6  
+4 Flask ==3.0.3 https://pypi.org/project/gunicorn
+5 gunicorn ==22.0.0  
+6 importlib_metadata ==8.7.0  
+7 itsdangerous ==2.2.0  
+8 Jinja2 ==3.1.6  
+9 MarkupSafe ==2.0.3  
+10 packaging ==23.0  
+11 Werkzeug ==3.0.4  
+12 zipp ==3.23.0  
